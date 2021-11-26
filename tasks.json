@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "C build",
-            "command": "${workspaceFolder}/.vscode/search_deps ${file} ${workspaceFolder} | xargs /usr/bin/clang++ -g -I${workspaceFolder} -o ${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension} -std=c++14",
+            "command": "${workspaceFolder}/.vscode/search_deps ${file} ${workspaceFolder} | xargs /usr/bin/clang++ -g -I${workspaceFolder} -o ${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension} -std=c++14 -fdiagnostics-color=always",
             // "args": [
             //     "-g",
             //     "${file}",
@@ -48,6 +48,7 @@
             "label": "Micro preprocesing",
             "command": "/usr/bin/clang",
             "args": [
+                "-fdiagnostics-color=always",
                 "-fcolor-diagnostics",
                 "-P",
                 "-E",

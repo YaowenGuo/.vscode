@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "iostream": "c",
+        "iosfwd": "c",
+        "ostream": "c",
+        "iterator": "c",
+        "algorithm": "c",
+        "csapp.h": "c",
+        "pthread.h": "c",
+        "stdatomic.h": "c",
+        "string": "c",
+        "bitset": "c",
+        "atomic": "c",
+        "queue": "cpp",
+        "random": "cpp",
+        "stddef.h": "c",
+        "stdint.h": "c",
+        "functional": "c",
+        "__threading_support": "c",
+        "cstdlib": "c",
+        "condition_variable": "c",
+        "memory": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

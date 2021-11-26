@@ -1,0 +1,40 @@
+#!/bin/bash
+declare -a deps
+deps=($1)
+base_path=$2
+
+function fileExistAndAdd() {
+    if [ -e $1 ]; then
+        if [[ ! "${deps[*]}" =~ $1 ]]; then
+            deps+=($1)
+            # deps[${#deps[*]}]=$1
+            return 0
+        fi
+    fi
+    return 1
+}
+
+function searchFile() {
+    for file in `grep $1 -e '^#\s*include\s*"\S' | awk -F' "|.h"$' '{print $2}'`
+    do
+        path="$base_path/$file.c"
+        if fileExistAndAdd $path ; then
+            searchFile $path
+        fi
+
+        path="$base_path/$file.cc"
+        if fileExistAndAdd $path ; then
+            searchFile $path
+        fi
+        path="$base_path/$file.cpp"
+         if fileExistAndAdd $path ; then
+            searchFile $path
+        fi
+    done
+}
+
+
+
+searchFile $1
+
+echo ${deps[*]}

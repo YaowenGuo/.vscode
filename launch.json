@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": "${file}",
+            "projectName": "computer_systems"
+        },
+        {
             "name": "C Launch",
             "type": "cppdbg",
             "request": "launch",

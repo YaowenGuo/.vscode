@@ -32,7 +32,11 @@
         {
             "type": "shell",
             "label": "C++ build",
-            "command": "${workspaceFolder}/.vscode/search_deps ${file} ${workspaceFolder} | xargs /usr/bin/clang++ -g -I${workspaceFolder} -o ${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension} -std=c++11 -fdiagnostics-color=always",
+            "command": "${workspaceFolder}/.vscode/search_deps ${file} ${workspaceFolder} | xargs /usr/bin/clang++ -g -I${workspaceFolder} -o ${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension} -std=c++17 -O1 -fdiagnostics-color=always", // -Xclang -fdump-vtable-layouts -Xclang -fdump-record-layouts-simple
+            // clang -Xclang -fdump-record-layouts-simple simple.cpp
+            //  -Xclang -fdump-record-layouts 导出对象布局
+            // -Xclang -fdump-vtable-layouts 输出虚函数表
+            // https://stackoverflow.com/questions/51005713/dumping-memory-layout-of-c-object-does-not-work-in-clang
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -101,7 +105,7 @@
             "label": "Clang Format",
             "command": "/usr/local/opt/llvm/bin/clang-format",
             "args": [
-                "-style=Google",
+                "-style=Mozilla",
                 "-i",
                 "${file}"
             ],
@@ -123,7 +127,7 @@
             "label": "X64 ASM",
             "command": "/usr/bin/clang",
             "args": [
-                "-std=c11",
+                "-std=c++20",
                 "-fcolor-diagnostics",
                 "-I${workspaceFolder}",
                 "-O3",
@@ -151,13 +155,14 @@
         {
             "type": "cppbuild",
             "label": "Arm ASM",
-            "command": "~/sdk/ndk/23.0.7599858/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+            "command": "~/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
             "args": [
                 "-std=c11",
                 "-std=gnu99", // for use asm("")
                 "-fcolor-diagnostics",
                 "-target",
                 "aarch64-linux-android21",
+                // "-fstack-protector", // 栈保护
                 // "armv7a-linux-androideabi21",
                 // "-g", // 调试会添加过多的信息
                 // "-I${workspaceFolder}",
@@ -187,7 +192,7 @@
         {
             "type": "cppbuild",
             "label": "ArmV7 ASM",
-            "command": "~/sdk/ndk/23.0.7599858/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+            "command": "~/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
             "args": [
                 "-std=c11",
                 "-fcolor-diagnostics",

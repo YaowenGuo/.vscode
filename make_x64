@@ -1,0 +1,4 @@
+#!/bin/bash
+
+make menuconfig LLVM=-16 ARCH=x86 O=out/x64
+make LLVM=-16 ARCH=x86 O=out/x64

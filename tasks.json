@@ -101,7 +101,7 @@
             ]
         },
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "Clang Format",
             "command": "/usr/local/opt/llvm/bin/clang-format",
             "args": [
@@ -123,7 +123,7 @@
             "dependsOn": []
         },
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "X64 ASM",
             "command": "/usr/bin/clang",
             "args": [
@@ -153,7 +153,7 @@
             "detail": "Task for comoile c/c++ code to X86 ASM.",
         },
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "Arm ASM",
             "command": "~/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
             "args": [
@@ -190,7 +190,7 @@
             ],
         },
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "ArmV7 ASM",
             "command": "~/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
             "args": [
@@ -222,7 +222,7 @@
             ],
         },
         {
-            "type": "cppbuild",
+            "type": "shell",
             "label": "Only Build",
             "command": "/usr/bin/clang++",
             "args": [
@@ -249,7 +249,46 @@
             "dependsOn": [
                 "make_sure_build_directory"
             ],
-        }
+        },
+        {
+            "type": "shell",
+            "label": "Arm64 Linux Debug Qemu",
+            "command": "${workspaceFolder}/.vscode/launch_arm64_linux_debug_qemu",
+            "detail": "This task is used for launch a debug QEMU for debug linux kernel.",
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "X64 Linux Debug Qemu",
+            "command": "${workspaceFolder}/.vscode/launch_x64_linux_debug_qemu",
+            "detail": "This task is used for launch a debug QEMU for debug linux kernel.",
+            "isBackground": true,
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            // "problemMatcher": {
+            //     "pattern": {
+            //       "regexp": "^qemu-system-(.*)\\s*: QEMU: Terminated via GDBstub$",
+            //       "file": 1,
+            //       "line": 2,
+            //       "column": 3,
+            //       "severity": 4,
+            //       "message": 5
+            //     },
+            //     "background": {
+            //         "activeOnStart": true,
+            //         "beginsPattern": "^QEMU was started.",
+            //         "endsPattern": "^qemu-system-(.*)\\s*: QEMU: Terminated via GDBstub$"
+            //     }
+            // }
+        },
     ],
     "version": "2.0.0"
 }

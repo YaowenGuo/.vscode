@@ -13,7 +13,7 @@
         },
         {
             "name": "C Launch",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension}",
             "args": [],
@@ -26,7 +26,7 @@
         },
         {
             "name": "C++ Launch",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension}",
             "args": [],
@@ -36,6 +36,32 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "preLaunchTask": "C++ build"
+        },
+        {
+            "name": "ARM64 Linux Debug",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/arm64/vmlinux",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "processCreateCommands": [
+                "gdb-remote 1234",
+                // "settings append target.source-map /home/lim/stable /Users/lim/Projects/linux/stable"
+            ],
+            "preLaunchTask": "Arm64 Linux Debug Qemu",
+        },
+        {
+            "name": "X64 Linux Debug",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/x64/vmlinux",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "processCreateCommands": [
+                "gdb-remote 1234",
+                // "settings append target.source-map /home/lim/stable /Users/lim/Projects/linux/stable"
+            ],
+            "preLaunchTask": "X64 Linux Debug Qemu",
         }
     ]
 }

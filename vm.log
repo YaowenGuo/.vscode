@@ -1,0 +1,20 @@
+c[?7l[2J[0mSeaBIOS (version rel-1.16.3-0-ga6ed6b701f0a-prebuilt.qemu.org)
+
+
+iPXE (http://ipxe.org) 00:02.0 CA00 PCI2.10 PnP PMM+7EFD0BF0+7EF30BF0 CA00
+Press Ctrl-B to configure iPXE (PCI 00:02.0)...                                                                               
+
+
+Booting from ROM..c[?7l[2JNo EFI environment detected.
+early console in extract_kernel
+input_data: 0x0000000002c672b9
+input_len: 0x0000000000c42fd1
+output: 0x0000000001000000
+output_len: 0x0000000002860d38
+kernel_total_size: 0x0000000002628000
+needed_size: 0x0000000002a00000
+trampoline_32bit: 0x0000000000000000
+
+Decompressing Linux... Parsing ELF... done.
+Booting the kernel (entry_offset: 0x0000000000000000).
+qemu-system-x86_64: QEMU: Terminated via GDBstub

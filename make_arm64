@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ..
+make menuconfig LLVM=-16 O=out/arm64
+make LLVM=-16 O=out/arm64

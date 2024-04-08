@@ -15,26 +15,20 @@
             "name": "C Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension}",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "C build"
+            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
+            "args": [
+                /* "--stop-at-entry" */
+            ],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "C build",
         },
         {
             "name": "C++ Launch",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/.target/${relativeFileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
             "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
+            "cwd": "${workspaceFolder}",
             "preLaunchTask": "C++ build"
         },
         {

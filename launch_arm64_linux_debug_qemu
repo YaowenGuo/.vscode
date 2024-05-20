@@ -1,23 +1,23 @@
 #!/bin/bash
-echo "QEMU was started."
+echo "QEMU Linux started"
 
-# qemu-system-aarch64 -machine virt -cpu cortex-a57  \
-#   -kernel out/arm64/arch/arm64/boot/Image \
-#   -append "root=/dev/sda earlyprintk=serial nokaslr"\
-#   -hda image/bullseye.img \
-#   -net user,hostfwd=tcp::10021-:22 -net nic \
-#   -nographic \
-#   -m 2G \
-#   -s \
-#   -S \
-#   -smp 2 \
-#   -pidfile vm.pid \
-#   2>&1 | tee vm.log
-
-qemu-system-aarch64 -machine virt,accel=hvf -cpu host  \
-  -kernel arch/arm64/boot/Image \
-  -append "nokaslr"\
+qemu-system-aarch64 -machine virt -cpu cortex-a57  \
+  -kernel out/arm64/arch/arm64/boot/Image \
+  -append "root=/dev/sda earlyprintk=serial nokaslr"\
+  -hda image/bullseye.img \
+  -net user,hostfwd=tcp::10021-:22 -net nic \
   -nographic \
   -m 2G \
   -s \
-  -S
+  -S \
+  -smp 2 \
+  -pidfile vm.pid \
+  2>&1 | tee vm.log
+
+# qemu-system-aarch64 -machine virt,accel=hvf -cpu host  \
+#   -kernel arch/arm64/boot/Image \
+#   -append "nokaslr"\
+#   -nographic \
+#   -m 2G \
+#   -s \
+#   -S

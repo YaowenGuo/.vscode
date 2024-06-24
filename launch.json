@@ -42,6 +42,9 @@
                 "gdb-remote 1234",
                 // "settings append target.source-map /home/lim/stable /Users/lim/Projects/linux/stable"
             ],
+            "postRunCommands": [
+                "target modules load --file vmlinux .head.text 0x40200000 .text 0x40210000 .rodata.text 0x41e2b800 .init.text 0x41e40000",
+            ],
             "preLaunchTask": "Arm64 Linux Debug Qemu",
         },
         {
@@ -55,6 +58,7 @@
                 "gdb-remote 1234",
                 // "settings append target.source-map /home/lim/stable /Users/lim/Projects/linux/stable"
             ],
+
             "preLaunchTask": "X64 Linux Debug Qemu",
         }
     ]

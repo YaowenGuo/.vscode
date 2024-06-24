@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 make menuconfig LLVM=-18 ARCH=x86 O=out/x64
 make LLVM=-18 -j$(nproc) ARCH=x86 O=out/x64

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 qemu-system-x86_64 -machine q35,accel=tcg -smp cpus=8  \
   -kernel out/x64/arch/x86/boot/bzImage \

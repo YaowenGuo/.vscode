@@ -1,5 +1,4 @@
-#!/bin/bash
-echo "QEMU Linux started"
+#!/usr/bin/env bash
 
 qemu-system-aarch64 -machine virt -cpu cortex-a57  \
   -kernel out/arm64/arch/arm64/boot/Image \
@@ -11,8 +10,11 @@ qemu-system-aarch64 -machine virt -cpu cortex-a57  \
   -s \
   -S \
   -smp 2 \
-  -pidfile vm.pid \
-  2>&1 | tee vm.log
+  -pidfile vm.pid
+  
+  
+  # \
+  # 2>&1 | tee vm.log
 
 # qemu-system-aarch64 -machine virt,accel=hvf -cpu host  \
 #   -kernel arch/arm64/boot/Image \

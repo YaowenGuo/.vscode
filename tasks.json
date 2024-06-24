@@ -248,7 +248,7 @@
                   "background": {
                     "activeOnStart": true,
                     "beginsPattern": ".",
-                    "endsPattern": "QEMU Linux started",
+                    "endsPattern": "Specify the 'raw' format explicitly to remove the restrictions.",
                   }
                 }
               ]

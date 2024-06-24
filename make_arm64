@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 cd ..
 make menuconfig LLVM=-18 O=out/arm64

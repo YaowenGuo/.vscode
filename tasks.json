@@ -266,22 +266,25 @@
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            // "problemMatcher": {
-            //     "pattern": {
-            //       "regexp": "^qemu-system-(.*)\\s*: QEMU: Terminated via GDBstub$",
-            //       "file": 1,
-            //       "line": 2,
-            //       "column": 3,
-            //       "severity": 4,
-            //       "message": 5
-            //     },
-            //     "background": {
-            //         "activeOnStart": true,
-            //         "beginsPattern": "^QEMU was started.",
-            //         "endsPattern": "^qemu-system-(.*)\\s*: QEMU: Terminated via GDBstub$"
-            //     }
-            // }
         },
+        {
+            "type": "shell",
+            "label": "Build Arm64 ASM",
+            "command": "clang",
+            "args": [
+                "-O0",
+                "-gdwarf-5",
+                "-e",
+                "main",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}"
+            ],
+            "detail": "Build ARM64 assembly on arm64 linux by clang.",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
     ],
     "version": "2.0.0"
 }

@@ -60,6 +60,15 @@
             ],
 
             "preLaunchTask": "X64 Linux Debug Qemu",
+        },
+        {
+            "name": "Arm64 ASM Debug",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build Arm64 ASM",
         }
     ]
 }
